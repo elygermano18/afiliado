@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologia da Informação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesArtigo.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset básico */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Carrossel em tela cheia */
+        .carrossel-2 {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .imagens {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            position: relative;
+        }
+
+        .imagens img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .imagens img.ativa {
+            opacity: 1;
+        }
+
+        .botao-prev-2, .botao-next-2 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .botao-prev-2:hover, .botao-next-2:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .botao-prev-2 {
+            left: 20px;
+        }
+
+        .botao-next-2 {
+            right: 20px;
+        }
+
+        .cta-clik-img {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .article-container {
+            margin-top: 18px;
+        }
+
+        .icon-grid {
+            gap: 65px;
+        }
+
+        .feature-article {
+            padding: 2px;
+            text-align: center;
+        }
+
+        .artigo-tecnologiadainformacao {
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .botao-prev-2, .botao-next-2 {
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            .carrossel-2 {
+                width: 100%;
+                height: 80vh;
+            }
+
+            .cta-clik-img {
+                font-size: 18px;
+            }
+
+            #im1 {
+                content: url('img/mobile/Tecnologia-da-informacao/do-zero-ao-site-mobile.png');
+            }
+
+            #im2 {
+                content: url('img/mobile/Tecnologia-da-informacao/web-do-zero-mobile.png');
+            }
+
+            #im3 {
+                content: url('img/mobile/Tecnologia-da-informacao/formacao-web-dsigner-mobile.png');
+            }
+
+            #im4 {
+                content: url('img/mobile/Tecnologia-da-informacao/curso-pyton-turbo-mobile.png');
+            }
+
+            #im5 {
+                content: url('img/mobile/Tecnologia-da-informacao/curso-desbloqueio-Xbox-360-mobile.png');
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menu de navegação -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="img-logo">
+                <img src="icons8-livros-50.png" alt="Logo Aprenda e Evolua" class="logo-icon">
+            </div>
+            <p class="aprenda">Aprenda & Evolua</p>
+        </div>
+    
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <!-- Submenu Categorias -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Categorias</a>
+                <ul class="submenu">
+                    <li><a href="financasEinvestimento.html">Finanças e Investimentos</a></li>
+                    <li><a href="negociosEcarreiras.html">Negócios e Carreiras</a></li>
+                    <li><a href="desenvolvimentoPessoal.html">Desenvolvimento Pessoal</a></li>
+                    <li><a href="tecnologiaDaInformacao.html">Tecnologia da Informação</a></li>
+                    <li><a href="empreendedorismodigital.html">Empreendedorismo Digital</a></li>
+                </ul>
+            </li>
+            
+            <!-- Submenu Utilidades (com itens de Diversão incorporados) -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Utilidades</a>
+                <ul class="submenu">
+                    <li><a href="#">Relógio</a></li>
+                    <li><a href="#">Cronometro</a></li>
+                    <li><a href="#">Calculadora</a></li>
+                    <li><a href="#">Roleta</a></li>
+                    <li><a href="#">Paciência</a></li>
+                    <li><a href="#">Dados</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <main>
+        <!-- Banner com Título -->
+        <section class="hero-section">
+            <img src="img/tecnologia-principal.jpeg" alt="Imagem de Hero" />
+            <h1>Tecnologia da Informação</h1>
+            <p>Domine as habilidades tecnológicas mais demandadas do mercado e transforme seu futuro profissional.</p>
+        </section>
+
+        <!-- Artigo sobre TI -->
+        <div class="artigo-tecnologiadainformacao box-artigo">
+            <article class="article-container">
+                <h2>💡 Por Que Aprender Tecnologia da Informação?</h2>
+                <p>Vivemos na era digital, onde conhecimento em tecnologia se tornou essencial para qualquer carreira. A área de TI oferece algumas das oportunidades mais promissoras do mercado atual, com salários acima da média e constante demanda por profissionais qualificados.</p>
+                <p>Seja você um iniciante completo ou alguém buscando se atualizar, investir em conhecimento tecnológico é o passaporte para:</p>
+            
+                <div class="icon-grid">
+                    <!-- Item 1: Mercado em Crescimento -->
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line fa-3x"></i>
+                        <h3>Mercado em Crescimento</h3>
+                        <p>O setor de TI cresce 3x mais rápido que a média do mercado, com milhares de vagas abertas e não preenchidas por falta de qualificação.</p>
+                    </div>
+            
+                    <!-- Item 2: Salários Atraentes -->
+                    <div class="feature-card">
+                        <i class="fas fa-money-bill-wave fa-3x"></i>
+                        <h3>Salários Atraentes</h3>
+                        <p>Profissionais de TI estão entre os mais bem pagos, com média salarial 60% acima de outras áreas, mesmo em cargos iniciais.</p>
+                    </div>
+            
+                    <!-- Item 3: Flexibilidade -->
+                    <div class="feature-card">
+                        <i class="fas fa-laptop-house fa-3x"></i>
+                        <h3>Flexibilidade</h3>
+                        <p>Muitas oportunidades de trabalho remoto e horários flexíveis, permitindo melhor qualidade de vida e equilíbrio pessoal.</p>
+                    </div>
+                </div>
+
+                <div class="texto-parte2-artigo">
+                    <h3>📊 O Cenário Atual do Mercado de TI</h3>
+                    <p>Dados reveladores sobre a área:</p>
+                    <ul>
+                        <li><strong>82% das empresas</strong> relatam dificuldade em encontrar profissionais de TI qualificados (Fonte: Brasscom)</li>
+                        <li><strong>420 mil vagas</strong> em TI ficaram sem preenchimento no Brasil nos últimos anos</li>
+                        <li>Profissionais com habilidades em Python têm <strong>30% mais chances</strong> de emprego</li>
+                    </ul>
+                
+                    <h3>🚀 Como Começar na Área de TI?</h3>
+                    <p>Não importa seu nível atual, aqui está um roteiro para iniciar sua jornada:</p>
+                    <ol>
+                        <li><strong>Escolha uma área de foco:</strong> Desenvolvimento Web, Programação, Design, Segurança, etc.</li>
+                        <li><strong>Invista em cursos especializados:</strong> Comece com fundamentos e depois se aprofunde.</li>
+                        <li><strong>Pratique constantemente:</strong> Crie projetos pessoais para aplicar o conhecimento.</li>
+                        <li><strong>Construa um portfólio:</strong> Mostre seu trabalho para potenciais empregadores ou clientes.</li>
+                    </ol>
+                </div>
+            
+                <div class="cta-container">
+                    <h2>Transforme-se em um Profissional de TI Hoje! 🚀</h2>
+                    <p>Comece sua jornada na área mais promissora da atualidade com nossos cursos especializados.</p>
+                    <a href="https://kiwify.app/FkADORn?afid=3Tn3gCbO" target="_blank" class="cta-button">Em alta!</a>
+                </div>
+            </article>
+        </div>
+
+        <!--Carrossel -->
+        <div class="carrossel-2">
+            <div class="imagens">
+                <a href="https://kiwify.app/FkADORn?afid=3Tn3gCbO" target="_blank">
+                    <img id="im1" class="img1 ativa" src="img/pc/Tecnologia-da-informacao/do-zero-ao-site-pc.png" alt="Curso do Zero ao Site">
+                </a>
+                <a href="https://kiwify.app/XF76x85?afid=vNK7FPtl" target="_blank">
+                    <img id="im2" class="img2" src="img/pc/Tecnologia-da-informacao/web-do-zero-pc.png" alt="Web do Zero">
+                </a>
+                <a href="https://kiwify.app/8oL2gFO?afid=IGrLn5KV" target="_blank">
+                    <img id="im3" class="img3" src="img/pc/Tecnologia-da-informacao/formacao-web-designer-pc.png" alt="Formação Web Designer">
+                </a>
+                <a href="https://kiwify.app/0GXAFQB?afid=7WTaRU0t" target="_blank">
+                    <img id="im4" class="img4" src="img/pc/Tecnologia-da-informacao/curso-pyton-turbo-pc.png" alt="Curso de Python Turbo">
+                </a>
+                <a href="https://kiwify.app/OfI0EZJ?afid=Y5j18uKS" target="_blank">
+                    <img id="im5" class="img5" src="img/pc/Tecnologia-da-informacao/curso-desbloqueio-Xbox-360-pc.png" alt="Curso Desbloqueio Xbox">
+                </a>
+            </div>
+            <button class="botao-prev-2">&#10094;</button>
+            <button class="botao-next-2">&#10095;</button>
+            <div class="indicadores"></div>
+        </div>
+
+        <!-- Seção de Cards -->
+        <article class="article-container" id="cursos">
+            <h2 class="section-title">🚀 Cursos em Destaque</h2>
+            <div class="icon-grid">
+                <!-- Artigo 1: Curso do Zero ao Site -->
+                <article class="feature-article">
+                    <h3>Curso do Zero ao Site</h3>
+                    <p>Aprenda com quem vive o que fala, a fazer da sua casa o que vai mudar a sua vida! Você já pode começar hoje fazendo sites de casa e ganhar mais de R$10mil por mês apartir dos próximos 30 dias.</p>
+                </article>
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <h3>Curso do Zero ao Site</h3>
+                    <p>Tudo o que você precisa saber para mudar de vida e ganhar mais de 5 mil reais por semana criando sites da sua casa.</p>
+                    <a href="https://kiwify.app/FkADORn?afid=3Tn3gCbO" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 2: Web do Zero -->
+                <article class="feature-article">
+                    <h3>Web do Zero</h3>
+                    <p>Você quer aprender a criar sites profissionais do absoluto zero e já sair vendendo seu serviço? O Web do Zero te ensina desde os fundamentos do design até a publicação de um site real, te ensinando a transformar essa habilidade em um negócio lucrativo.</p>
+                </article>
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <h3>Web do Zero</h3>
+                    <p>Do design à publicação: aprenda Web Design de forma prática e transforme seu conhecimento em renda.</p>
+                    <a href="https://kiwify.app/XF76x85?afid=vNK7FPtl" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 3: Formação Web Designer -->
+                <article class="feature-article">
+                    <h3>Formação Web Designer</h3>
+                    <p>Torne-se um designer web completo, dominando tanto a parte criativa quanto técnica. Aprenda UI/UX, ferramentas profissionais e como criar sites visualmente impressionantes.</p>
+                </article>
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <h3>Formação Web Designer</h3>
+                    <p>Método pra fazer 1.000 Reais por semana já no primeiro mês</p>
+                    <a href="https://kiwify.app/8oL2gFO?afid=IGrLn5KV" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 4: Curso de Python Turbo -->
+                <article class="feature-article">
+                    <h3>Curso de Python Turbo</h3>
+                    <p>No Curso Python Turbo, você aprenderá do básico ao avançado com foco em prática, projetos reais, teoria, desafios e suporte contínuo, além de mais de 40 projetos práticos.</p>
+                </article>
+                <!-- Card 4 -->
+                <div class="feature-card">
+                    <h3>Curso de Python Turbo</h3>
+                    <p>Aprenda Python online do Básico ao Profissional</p>
+                    <a href="https://kiwify.app/0GXAFQB?afid=7WTaRU0t" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 5: Curso Desbloqueio Xbox -->
+                <article class="feature-article">
+                    <h3>Curso Desbloqueio Xbox-360</h3>
+                    <p>O Programa Aprenda a Desbloquear do Zero é um curso online de Desbloqueio de Console Xbox 360 ideal para quem quer aprender a destravar vídeo games mas não tem nenhuma noção, no curso são mostradas técnicas para destravar modelos fat, Slim e Super Slim, de maneira simples e direta que mostram que é possível aprender a destravar seguindo um método ensinado e praticando.</p>
+                </article>
+                <!-- Card 5 -->
+                <div class="feature-card">
+                    <h3>Curso Desbloqueio Xbox-360</h3>
+                    <p>CHEGOU A HORA DE REALIZAR O SONHO DE APRENDER A DESBLOQUEAR XBOX 360</p>
+                    <a href="https://kiwify.app/OfI0EZJ?afid=Y5j18uKS" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sobre o Projeto -->
+            <div class="footer-section">
+                <h3>Sobre o Projeto</h3>
+                <p>
+                    Nosso objetivo é capacitar pessoas a alcançarem sucesso na área de tecnologia, oferecendo cursos práticos e de alta qualidade.
+                </p>
+            </div>
+
+            <!-- Links Rápidos -->
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contato@aprendaevolua.com</li>
+                    <li><i class="fas fa-phone"></i> (81) 99105-1562</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Timbaúba - PE, Brasil</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Direitos Autorais -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aprenda & Evolua. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scriptMenu.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".imagens a");
+            const imagens = document.querySelectorAll(".imagens img");
+            const prevBtn = document.querySelector(".botao-prev-2");
+            const nextBtn = document.querySelector(".botao-next-2");
+            const indicadorContainer = document.querySelector(".indicadores");
+            let indiceAtual = 0;
+            
+            function criarIndicadores() {
+                imagens.forEach((_, i) => {
+                    const indicador = document.createElement("span");
+                    indicador.classList.add("indicador");
+                    if (i === 0) indicador.classList.add("ativo");
+                    indicador.addEventListener("click", () => {
+                        indiceAtual = i;
+                        mostrarImagem(indiceAtual);
+                    });
+                    indicadorContainer.appendChild(indicador);
+                });
+            }
+
+            function atualizarIndicadores() {
+                document.querySelectorAll(".indicador").forEach((indicador, i) => {
+                    indicador.classList.toggle("ativo", i === indiceAtual);
+                });
+            }
+            
+            function mostrarImagem(indice) {
+                links.forEach(link => {
+                    link.style.pointerEvents = "none";
+                });
+                
+                imagens.forEach((img, i) => {
+                    img.classList.remove("ativa");
+                    if (i === indice) {
+                        img.classList.add("ativa");
+                        img.parentElement.style.pointerEvents = "auto";
+                    }
+                });
+                atualizarIndicadores();
+            }
+            
+            prevBtn.addEventListener("click", function () {
+                indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+                mostrarImagem(indiceAtual);
+            });
+            
+            nextBtn.addEventListener("click", function () {
+                indiceAtual = (indiceAtual + 1) % imagens.length;
+                mostrarImagem(indiceAtual);
+            });
+            
+            function avancarAutomaticamente() {
+                indiceAtual = (indiceAtual + 1) % imagens.length;
+                mostrarImagem(indiceAtual);
+            }
+            
+            setInterval(avancarAutomaticamente, 5000);
+            
+            mostrarImagem(0);
+            criarIndicadores();
+        });
+    </script>
+</body>
+</html>

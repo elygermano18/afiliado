@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Aprenda & Evolua</title>
+    <link rel="stylesheet" href="stylesArtigo.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para a página de contato */
+        .formulario-contato {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .formulario-contato h2 {
+            color: #2A2F4F;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-enviar {
+            background: #2A2F4F;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .btn-enviar:hover {
+            background: #917FB3;
+        }
+        
+        .pagina-relacionada {
+            margin-top: 0.5rem;
+            font-size: 14px;
+            color: #666;
+        }
+        .whatsapp-button {
+    background-color: #25D366;
+    color: white;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}
+    </style>
+</head>
+<body>
+    <!-- Menu de navegação -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="img-logo">
+                <img src="icons8-livros-50.png" alt="Logo Aprenda e Evolua" class="logo-icon">
+            </div>
+            <p class="aprenda">Aprenda & Evolua</p>
+        </div>
+    
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <!-- Submenu Categorias -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Categorias</a>
+                <ul class="submenu">
+                    <li><a href="financasEinvestimento.html">Finanças e Investimentos</a></li>
+                    <li><a href="negociosEcarreiras.html">Negócios e Carreiras</a></li>
+                    <li><a href="desenvolvimentoPessoal.html">Desenvolvimento Pessoal</a></li>
+                    <li><a href="tecnologiaDaInformacao.html">Tecnologia da Informação</a></li>
+                    <li><a href="empreendedorismodigital.html">Empreendedorismo Digital</a></li>
+                </ul>
+            </li>
+            
+            <!-- Submenu Utilidades (com itens de Diversão incorporados) -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Utilidades</a>
+                <ul class="submenu">
+                    <li><a href="#">Relógio</a></li>
+                    <li><a href="#">Cronometro</a></li>
+                    <li><a href="#">Calculadora</a></li>
+                    <li><a href="#">Roleta</a></li>
+                    <li><a href="#">Paciência</a></li>
+                    <li><a href="#">Dados</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <main>
+        <!-- Banner com Título -->
+        <section class="hero-section">
+            <img src="img/contato.png" alt="Imagem de Hero" />
+            <h1>Fale Conosco</h1>
+            <p>Relate problemas, envie sugestões ou tire suas dúvidas</p>
+        </section>
+
+        <!-- Formulário de Contato -->
+        <div class="formulario-contato">
+            <h2>Relate um Problema ou Envie uma Sugestão</h2>
+        
+            <form id="formContato" action="https://formsubmit.co/elygermanogoomes@gmail.com" method="POST">
+                <div class="form-group">
+                    <label for="nome">Seu Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="email">Seu E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="assunto">Tipo de Mensagem:</label>
+                    <select id="assunto" name="assunto" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="Relatar um erro">Relatar um erro</option>
+                        <option value="Enviar sugestão">Enviar sugestão</option>
+                        <option value="Tirar dúvida">Tirar dúvida</option>
+                        <option value="Outro assunto">Outro assunto</option>
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="pagina">Página relacionada (se aplicável):</label>
+                    <input type="text" id="pagina" name="pagina">
+                    <p class="pagina-relacionada">Ex: "Finanças e Investimentos", "Empreendedorismo Digital", etc.</p>
+                </div>
+        
+                <div class="form-group">
+                    <label for="mensagem">Descreva com detalhes:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+        
+                <!-- campos ocultos para configurar o envio -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+        
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+        </div>
+        
+
+        <!-- Seção de Informações de Contato -->
+        <article class="article-container">
+            <h2 class="section-title">Outras Formas de Contato</h2>
+            <div class="icon-grid">
+                <div class="feature-card">
+                    <i class="fas fa-envelope fa-3x"></i>
+                    <h3>E-mail</h3>
+                    <p>contato@aprendaevolua.com</p>
+                    <a href="mailto:contato@aprendaevolua.com" class="cta-button">Enviar e-mail</a>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fab fa-whatsapp fa-3x"></i>
+                    <h3>WhatsApp</h3>
+                    <p>(81) 99105-1562</p>
+                    <a href="https://wa.me/5581991051562" class="cta-button whatsapp-button">
+                        <i class="fab fa-whatsapp"></i> Enviar mensagem
+                    </a>
+                </div>
+                
+                
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sobre o Projeto -->
+            <div class="footer-section">
+                <h3>Sobre o Projeto</h3>
+                <p>
+                    Nosso objetivo é capacitar pessoas a alcançarem sua liberdade financeira através do empreendedorismo digital, oferecendo cursos, ebooks e treinamentos de alta qualidade.
+                </p>
+            </div>
+
+            <!-- Links Rápidos -->
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contato@aprendaevolua.com</li>
+                    <li><i class="fas fa-phone"></i> (81) 99105-1562</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Timbaúba - PE, Brasil</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Direitos Autorais -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aprenda & Evolua. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scriptMenu.js"></script>
+    <script>
+        // Validação do formulário
+        document.getElementById('formContato').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulação de envio (substitua por código real de envio)
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

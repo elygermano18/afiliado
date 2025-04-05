@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>noticia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesArtigo.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Adicione o Font Awesome para ícones -->
+    <style>
+        /* Reset básico */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Carrossel em tela cheia */
+        .carrossel-2 {
+            position: relative;
+            width: 80%; /* Ocupa 100% da largura */
+            margin: 0 auto;
+            height: 70vh; /* Altura ajustável */
+            overflow: hidden;
+        }
+
+        /* Container das imagens */
+        .imagens {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            position: relative;
+        }
+
+        /* Estilo das imagens */
+        .imagens img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Garante que a imagem cubra toda a área sem distorcer */
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .imagens img.ativa {
+            opacity: 1;
+        }
+
+        /* Botões de navegação */
+        .botao-prev-2, .botao-next-2 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .botao-prev-2:hover, .botao-next-2:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .botao-prev-2 {
+            left: 20px;
+        }
+
+        .botao-next-2 {
+            right: 20px;
+        }
+
+        /* CTA - Click na imagem */
+        .cta-clik-img {
+            position: absolute;
+            top: 90%; /* Posiciona o texto no rodapé do carrossel */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .article-container {
+            margin-top: 18px;
+        }
+
+        .icon-grid {
+            gap: 65px;
+        }
+
+        .feature-article {
+            padding: 2px;
+            text-align: center;
+        }
+
+        .cta-button-n {
+    background-color: none;
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 10px #FF5733, 0 0 40px #FF5733, 0 0 80px #FF5733;
+    text-shadow: 0 0 5px #FF5733, 0 0 10px #FF5733, 0 0 20px #FF5733;
+}
+.cta-button-n:hover {
+    background: #FF5733;
+    color: black;
+    box-shadow: 0 0 20px #FF5733, 0 0 60px #FF5733, 0 0 120px #FF5733;
+}
+
+      
+        /* Responsividade para telas pequenas */
+        @media (max-width: 768px) {
+            .botao-prev-2, .botao-next-2 {
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            .carrossel-2 {
+                width: 100%;
+                height: 80vh; /* Altura reduzida para telas pequenas */
+            }
+
+            .cta-clik-img {
+                font-size: 18px; /* Reduz o tamanho da fonte */
+            }
+
+            #im1 {
+                content: url('img/mobile/financas&investimento/financiamento-mobile/tiktok shop-mobile.png');
+            }
+
+            #im2 {
+                content: url('img/mobile/financas&investimento/financiamento-mobile/imperioDigital-mobile.png');
+            }
+
+            #im3 {
+                content: url('img/mobile/financas&investimento/financiamento-mobile/comunidade-rtm-mobile.png');
+            }
+
+            #im4 {
+                content: url('img/mobile/financas&investimento/financiamento-mobile/mometizar-facebook-tiktok.png');
+            }
+
+            #im5 {
+                content: url('img/mobile/financas&investimento/financiamento-mobile/imperio-das-comissoes-mobile.png');
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menu de navegação -->
+    <nav class="navbar">
+        <div href="#" class="logo">
+            <div class="img-logo">
+                <img src="icons8-livros-50.png" alt="Logo">
+            </div>
+            <p class="aprenda"> Aprenda & Evolua</p>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>              
+            <li><a href="negociosEcarreiras.html">Negócios e Carreiras</a></li>
+            <li><a href="desenvolvimentoPessoal.html">Desenvolvimento Pessoal</a></li>    
+            <li><a href="tecnologiaDaInformacao.html">Tecnologia da Informação</a></li>
+            <li><a href="empreendedorismodigital.html">Empreendedorismo Digital</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Utilidades</a>
+                <ul class="submenu">
+                    <li><a href="#">Relógio</a></li>
+                    <li><a href="#">Cronometro</a></li>
+                    <li><a href="#">Calculadora</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Diversão</a>
+                <ul class="submenu">
+                    <li><a href="#">Roleta</a></li>
+                    <li><a href="#">Paciencia</a></li>
+                    <li><a href="#">Dados</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <button class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <main>
+        <!-- Banner com Título -->
+       
+
+       
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sobre o Projeto -->
+            <div class="footer-section">
+                <h3>Sobre o Projeto</h3>
+                <p>
+                    Nosso objetivo é capacitar pessoas a alcançarem sua liberdade financeira através do empreendedorismo digital, oferecendo cursos, ebooks e treinamentos de alta qualidade.
+                </p>
+            </div>
+
+            <!-- Links Rápidos -->
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contato@aprendaevolua.com</li>
+                    <li><i class="fas fa-phone"></i> (81) 99105-1562</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Timbaúba - PE, Brasil</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Direitos Autorais -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aprenda & Evolua. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scriptMenu.js"></script>
+    <script src="script.js"></script>
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".imagens a"); // Selecionamos os links <a>
+    const imagens = document.querySelectorAll(".imagens img");
+    const prevBtn = document.querySelector(".botao-prev-2");
+    const nextBtn = document.querySelector(".botao-next-2");
+    const indicadorContainer = document.querySelector(".indicadores");
+    let indiceAtual = 0;
+    
+    function criarIndicadores() {
+        imagens.forEach((_, i) => {
+            const indicador = document.createElement("span");
+            indicador.classList.add("indicador");
+            if (i === 0) indicador.classList.add("ativo");
+            indicador.addEventListener("click", () => {
+                indiceAtual = i;
+                mostrarImagem(indiceAtual);
+            });
+            indicadorContainer.appendChild(indicador);
+        });
+    }
+
+    function atualizarIndicadores() {
+        document.querySelectorAll(".indicador").forEach((indicador, i) => {
+            indicador.classList.toggle("ativo", i === indiceAtual);
+        });
+    }
+    
+    function mostrarImagem(indice) {
+        // Primeiro desativa todos os links
+        links.forEach(link => {
+            link.style.pointerEvents = "none";
+        });
+        
+        // Depois controla as imagens
+        imagens.forEach((img, i) => {
+            img.classList.remove("ativa");
+            if (i === indice) {
+                img.classList.add("ativa");
+                // Ativa apenas o link da imagem visível
+                img.parentElement.style.pointerEvents = "auto";
+            }
+        });
+        atualizarIndicadores();
+    }
+    
+    prevBtn.addEventListener("click", function () {
+        indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+        mostrarImagem(indiceAtual);
+    });
+    
+    nextBtn.addEventListener("click", function () {
+        indiceAtual = (indiceAtual + 1) % imagens.length;
+        mostrarImagem(indiceAtual);
+    });
+    
+    function avancarAutomaticamente() {
+        indiceAtual = (indiceAtual + 1) % imagens.length;
+        mostrarImagem(indiceAtual);
+    }
+    
+    setInterval(avancarAutomaticamente, 5000); // Troca de imagem a cada 5 segundos
+    
+    // Inicialização correta
+    mostrarImagem(0);
+    criarIndicadores();
+});
+      </script>
+</body>
+</html>

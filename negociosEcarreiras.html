@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negócios e Carreiras</title>
+    <link rel="stylesheet" href="stylesArtigo.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Adicione o Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset básico */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+    
+        /* Carrossel em tela cheia */
+        .carrossel-2 {
+            position: relative;
+            width: 80%; /* Ocupa 100% da largura */
+            margin: 0 auto;
+            height: 70vh; /* Altura ajustável */
+            overflow: hidden;
+        }
+    
+        /* Container das imagens */
+        .imagens {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            position: relative;
+        }
+    
+        /* Estilo das imagens */
+        .imagens img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Garante que a imagem cubra toda a área sem distorcer */
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+    
+        .imagens img.ativa {
+            opacity: 1;
+        }
+    
+        /* Botões de navegação */
+        .botao-prev-2, .botao-next-2 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+    
+        .botao-prev-2:hover, .botao-next-2:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    
+        .botao-prev-2 {
+            left: 20px;
+        }
+    
+        .botao-next-2 {
+            right: 20px;
+        }
+    
+        /* CTA - Click na imagem */
+        .cta-clik-img {
+            position: absolute;
+            top: 90%; /* Posiciona o texto no rodapé do carrossel */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            z-index: 10;
+        }
+        .article-container {
+            margin-top: 18px;
+            
+            }
+            .icon-grid {
+                gap:  65px;
+            }
+    
+            .feature-article {
+               
+                padding: 2px;
+                text-align: center;
+            }
+            .artigo-negociosCarreiras {
+                margin-bottom: 14px;
+               
+            }
+            .article-container ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+        
+        /* Responsividade para telas pequenas */
+        @media (max-width: 768px) {
+            .botao-prev-2, .botao-next-2 {
+                padding: 10px;
+                font-size: 18px;
+            }
+            .carrossel-2 {
+                width: 100%;
+                height: 80vh; /* Altura reduzida para telas pequenas */
+            }
+            .cta-clik-img {
+                font-size: 18px; /* Reduz o tamanho da fonte */
+            }
+            #im1 {
+                 content: url('img/mobile/negociosEcarreiras/compraevende-de-motos-mobile.png');      
+            }
+            #im2 {
+                 content: url('img/mobile/negociosEcarreiras/barbearia-lucrativa-mobile.png');      
+            }
+            #im3 {
+                 content: url('img/mobile/negociosEcarreiras/vig.doc-regularisa-mobile.png');      
+            }
+            #im4 {
+                 content: url('img/mobile/negociosEcarreiras/Metodo-TD90-plus-mobile.png');      
+            }
+            #im5 {
+                 content: url('img/mobile/negociosEcarreiras/lista-de-fornecedores-mobile.png');      
+            }
+        }
+      
+    </style>
+</head>
+
+<body>
+    <!-- Menu de navegação -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="img-logo">
+                <img src="icons8-livros-50.png" alt="Logo Aprenda e Evolua" class="logo-icon">
+            </div>
+            <p class="aprenda">Aprenda & Evolua</p>
+        </div>
+    
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <!-- Submenu Categorias -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Categorias</a>
+                <ul class="submenu">
+                    <li><a href="financasEinvestimento.html">Finanças e Investimentos</a></li>
+                    <li><a href="negociosEcarreiras.html">Negócios e Carreiras</a></li>
+                    <li><a href="desenvolvimentoPessoal.html">Desenvolvimento Pessoal</a></li>
+                    <li><a href="tecnologiaDaInformacao.html">Tecnologia da Informação</a></li>
+                    <li><a href="empreendedorismodigital.html">Empreendedorismo Digital</a></li>
+                </ul>
+            </li>
+            
+            <!-- Submenu Utilidades (com itens de Diversão incorporados) -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Utilidades</a>
+                <ul class="submenu">
+                    <li><a href="#">Relógio</a></li>
+                    <li><a href="#">Cronometro</a></li>
+                    <li><a href="#">Calculadora</a></li>
+                    <li><a href="#">Roleta</a></li>
+                    <li><a href="#">Paciência</a></li>
+                    <li><a href="#">Dados</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <main>
+        <!-- Banner com Título -->
+        <section class="hero-section">
+            <img src="img/negocios-principal.jpeg" alt="Imagem de Hero" />
+            <h1>Negócios e Carreiras</h1>
+            <p>Transforme sua carreira e construa negócios lucrativos com estratégias comprovadas.</p>
+        </section>
+        <div class="artigo-negociosCarreiras">
+            <article class="article-container texto-parte2-artigo">
+                <h1>Negócios e Carreiras: Como Alcançar o Sucesso Profissional</h1>
+                <p>No mundo atual, tanto os negócios quanto as carreiras estão passando por transformações significativas. Seja você um empreendedor buscando construir um negócio de sucesso ou um profissional que deseja alavancar sua carreira, este artigo vai fornecer insights valiosos para ajudá-lo a alcançar seus objetivos.</p>
+        
+                <h2>💡 Por Que Investir em Negócios e Desenvolvimento de Carreira?</h2>
+                <p>O mercado está em constante evolução e exige profissionais e empreendedores cada vez mais preparados. Aqui estão algumas razões pelas quais você deve investir no seu desenvolvimento:</p>
+                <ul>
+                    <li><strong>Mercado Competitivo:</strong> Diferenciação é essencial para se destacar em um mercado cada vez mais competitivo.</li>
+                    <li><strong>Oportunidades de Crescimento:</strong> Novas áreas e modelos de negócio estão surgindo constantemente.</li>
+                    <li><strong>Independência Financeira:</strong> Ter seu próprio negócio ou uma carreira sólida pode proporcionar liberdade financeira.</li>
+                    <li><strong>Realização Pessoal:</strong> Fazer o que ama e ser reconhecido por isso traz satisfação pessoal e profissional.</li>
+                </ul>
+        
+                <h2>🚀 Passos para Alavancar sua Carreira ou Negócio</h2>
+                <p>Seja qual for seu objetivo, alguns passos são fundamentais para o sucesso:</p>
+                <ol>
+                    <li><strong>Defina Seus Objetivos:</strong> Tenha clareza sobre onde você quer chegar e em quanto tempo.</li>
+                    <li><strong>Adquira Conhecimento:</strong> Invista em cursos, mentorias e treinamentos que agreguem valor.</li>
+                    <li><strong>Construa uma Rede de Contatos:</strong> Networking é essencial para abrir portas e criar oportunidades.</li>
+                    <li><strong>Desenvolva Habilidades:</strong> Além do conhecimento técnico, habilidades comportamentais são cada vez mais valorizadas.</li>
+                    <li><strong>Execute e Ajuste:</strong> Coloque em prática o que aprendeu e esteja disposto a ajustar a rota quando necessário.</li>
+                </ol>
+        
+                <h2>📈 Ferramentas Essenciais para Profissionais e Empreendedores</h2>
+                <p>Para ter sucesso nos negócios ou na carreira, é importante utilizar as ferramentas certas. Aqui estão algumas que você deve considerar:</p>
+                <div class="icon-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-chart-pie fa-3x"></i>
+                        <h3>Gestão Financeira</h3>
+                        <p>Controle suas finanças pessoais ou do negócio com ferramentas como Excel, QuickBooks ou ContaAzul.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users fa-3x"></i>
+                        <h3>Networking</h3>
+                        <p>Utilize LinkedIn e eventos do setor para expandir sua rede de contatos profissionais.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-graduation-cap fa-3x"></i>
+                        <h3>Desenvolvimento Contínuo</h3>
+                        <p>Plataformas como Coursera, Udemy e Hotmart oferecem cursos para seu crescimento constante.</p>
+                    </div>
+                </div>
+        
+                <h2>🎯 Dicas para o Sucesso Profissional e Empresarial</h2>
+                <p>Para se destacar no mercado, siga estas práticas recomendadas:</p>
+                <ul>
+                    <li><strong>Seja Proativo:</strong> Não espere oportunidades, crie-as.</li>
+                    <li><strong>Invista em Sua Marca Pessoal:</strong> Sua reputação é seu maior ativo.</li>
+                    <li><strong>Mantenha-se Atualizado:</strong> O mercado muda rapidamente, esteja sempre aprendendo.</li>
+                    <li><strong>Tenha Resiliência:</strong> Obstáculos são inevitáveis, mas superáveis.</li>
+                </ul>
+        
+                <div class="cta-container">
+                    <h2>Transforme Sua Carreira ou Negócio Hoje Mesmo! 🚀</h2>
+                    <p>Não perca a oportunidade de alcançar seus objetivos com conhecimento prático e estratégias comprovadas. Conheça nossos cursos e mentorias especializadas.</p>
+                    <a href="https://kiwify.app/YJggS6d?afid=J1LqpOI4" class="cta-button" target="_blank">Em alta!!</a>
+                </div>
+            </article>
+        </div>
+
+        <!--Carrossel -2-->
+        <div class="carrossel-2">
+            <div class="imagens">
+                <a href="https://kiwify.app/LtcILAV?afid=0plnThXS" target="_blank">
+                    <img id="im1" class="img1 ativa" src="img/pc/negocios -e-carreiras/compra-e-venda-de-motos-pc.png" alt="Mentoria Compra e Venda de Motos">
+                </a>
+                <a href="https://kiwify.app/ALbRCin?afid=dsBxZQ1Z" target="_blank">
+                    <img id="im2" class="img2" src="img/pc/negocios -e-carreiras/barbearia-lucrativa-pc.png" alt="Curso Barbearia Lucrativa">
+                </a>
+                <a href="https://kiwify.app/snVKAmQ?afid=Er8yjqSi" target="_blank">
+                    <img id="im3" class="img3" src="img/pc/negocios -e-carreiras/vig.doc-regularisa-pc.png" alt="Sua Renda em Casa 2.0">
+                </a>
+                <a href="https://kiwify.app/3CZy6zO?afid=nPclptHi" target="_blank">
+                    <img id="im4" class="img4" src="img/pc/negocios -e-carreiras/metodo-td90plus-pc.png" alt="Vig.doc Regulariza">
+                </a>
+                <a href="https://kiwify.app/YJggS6d?afid=J1LqpOI4   " target="_blank">
+                    <img id="im5" class="img5" src="img/pc/negocios -e-carreiras/lista-fornecedores-pc.png" alt="Lista de Fornecedores">
+                </a>
+            </div>
+            <button class="botao-prev-2">&#10094;</button> <!-- Ícone de anterior -->
+            <button class="botao-next-2">&#10095;</button> <!-- Ícone de próximo -->
+            <div class="indicadores"></div>
+        </div>
+
+        <!-- Seção de Cards -->
+        <article class="article-container" id="cursos">
+            <h2 class="section-title">🚀 Destaques</h2>
+            <div class="icon-grid">
+                <!-- Artigo 1 -->
+                <article class="feature-article">
+                    <h3>Mentoria Compra e Venda de Motos</h3>
+                    <p>Aprenda o passo a passo para lucrar com compra e venda de motos usadas. Este curso ensina desde a avaliação de veículos até técnicas de negociação que podem dobrar seu lucro. Ideal para quem quer começar um negócio no ramo automotivo com baixo investimento inicial.</p>
+                </article>
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <h3>Mentoria Compra e Venda de Motos</h3>
+                    <p>Domine o mercado de motos usadas e transforme seu conhecimento em lucro</p>
+                    <a href="https://kiwify.app/LtcILAV?afid=0plnThXS" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 2 -->
+                <article class="feature-article">
+                    <h3>Curso Barbearia Lucrativa</h3>
+                    <p>Transforme sua barbearia em um negócio altamente lucrativo com técnicas de gestão, marketing e atendimento ao cliente. Aprenda a aumentar seu faturamento em até 3x com estratégias comprovadas de precificação e fidelização de clientes.</p>
+                </article>
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <h3>Curso Barbearia Lucrativa</h3>
+                    <p>Eleve sua barbearia ao próximo nível com gestão profissional</p>
+                    <a href="https://kiwify.app/ALbRCin?afid=dsBxZQ1Z" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 3 -->
+                <article class="feature-article">
+                    <h3>Vig.doc Regulariza</h3>
+                    <p>Não corra riscos! Mantenha a documentação da Vigilância Sanitária em dia para sua clínica. Aprenda o processo completo de regularização para evitar multas e interdições, garantindo que seu estabelecimento esteja sempre dentro das normas sanitárias.</p>
+                </article>
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <h3>Vig.doc Regulariza</h3>
+                    <p>Regularize sua clínica e evite problemas com a Vigilância Sanitária</p>
+                    <a href="https://kiwify.app/snVKAmQ?afid=Er8yjqSi" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 4 -->
+                <article class="feature-article">
+                    <h3>Método TD90-plus</h3>
+                    <p>Torne-se um Técnico de Refrigeração em tempo recorde! Este método acelerado ensina desde os fundamentos até técnicas avançadas de instalação e manutenção de sistemas de refrigeração residencial e comercial.</p>
+                </article>
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <h3>Método TD90-plus</h3>
+                    <p>Certificação rápida para Técnico de Refrigeração profissional</p>
+                    <a href="https://kiwify.app/3CZy6zO?afid=nPclptHi" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+                <!-- Artigo 5 -->
+                <article class="feature-article">
+                    <h3>Lista de Fornecedores</h3>
+                    <p>Acesse uma lista exclusiva de fornecedores  confiáveis do mercado brasileiro para diversos segmentos de negócios. Este material é essencial para quem quer começar um e-commerce, loja física ou revenda, com contatos testados e aprovados que oferecem ótimos preços e condições.</p>
+                </article>
+                <!-- Card 5 -->
+                <div class="feature-card">
+                    <h3>Lista de Fornecedores</h3>
+                    <p>Fornecedores confiáveisdo mercado brasileiro para você começar seu negócio com o pé direito</p>
+                    <a href="https://kiwify.app/YJggS6d?afid=J1LqpOI4" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sobre o Projeto -->
+            <div class="footer-section">
+                <h3>Sobre o Projeto</h3>
+                <p>
+                    Nosso objetivo é capacitar pessoas a alcançarem sucesso em suas carreiras e negócios, oferecendo cursos, mentorias e recursos de alta qualidade.
+                </p>
+            </div>
+
+            <!-- Links Rápidos -->
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>  
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contato@aprendaevolua.com</li>
+                    <li><i class="fas fa-phone"></i> (81) 99105-1562</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Timbaúba - PE, Brasil</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Direitos Autorais -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aprenda & Evolua. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scriptMenu.js"></script>
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".imagens a"); // Selecionamos os links <a>
+    const imagens = document.querySelectorAll(".imagens img");
+    const prevBtn = document.querySelector(".botao-prev-2");
+    const nextBtn = document.querySelector(".botao-next-2");
+    const indicadorContainer = document.querySelector(".indicadores");
+    let indiceAtual = 0;
+    
+    function criarIndicadores() {
+        imagens.forEach((_, i) => {
+            const indicador = document.createElement("span");
+            indicador.classList.add("indicador");
+            if (i === 0) indicador.classList.add("ativo");
+            indicador.addEventListener("click", () => {
+                indiceAtual = i;
+                mostrarImagem(indiceAtual);
+            });
+            indicadorContainer.appendChild(indicador);
+        });
+    }
+
+    function atualizarIndicadores() {
+        document.querySelectorAll(".indicador").forEach((indicador, i) => {
+            indicador.classList.toggle("ativo", i === indiceAtual);
+        });
+    }
+    
+    function mostrarImagem(indice) {
+        // Primeiro desativa todos os links
+        links.forEach(link => {
+            link.style.pointerEvents = "none";
+        });
+        
+        // Depois controla as imagens
+        imagens.forEach((img, i) => {
+            img.classList.remove("ativa");
+            if (i === indice) {
+                img.classList.add("ativa");
+                // Ativa apenas o link da imagem visível
+                img.parentElement.style.pointerEvents = "auto";
+            }
+        });
+        atualizarIndicadores();
+    }
+    
+    prevBtn.addEventListener("click", function () {
+        indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+        mostrarImagem(indiceAtual);
+    });
+    
+    nextBtn.addEventListener("click", function () {
+        indiceAtual = (indiceAtual + 1) % imagens.length;
+        mostrarImagem(indiceAtual);
+    });
+    
+    function avancarAutomaticamente() {
+        indiceAtual = (indiceAtual + 1) % imagens.length;
+        mostrarImagem(indiceAtual);
+    }
+    
+    setInterval(avancarAutomaticamente, 5000); // Troca de imagem a cada 5 segundos
+    
+    // Inicialização correta
+    mostrarImagem(0);
+    criarIndicadores();
+});
+    </script>
+    
+</body>
+</html>

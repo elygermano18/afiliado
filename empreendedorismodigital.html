@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empreendedorismo Digital</title>
+    <link rel="stylesheet" href="stylesArtigo.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Adicione o Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset básico */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+    
+        /* Carrossel em tela cheia */
+        .carrossel-2 {
+            position: relative;
+            width: 80%; /* Ocupa 100% da largura */
+            margin: 0 auto;
+            height: 70vh; /* Altura ajustável */
+            overflow: hidden;
+        }
+    
+        /* Container das imagens */
+        .imagens {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            position: relative;
+        }
+    
+        /* Estilo das imagens */
+        .imagens img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Garante que a imagem cubra toda a área sem distorcer */
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+    
+        .imagens img.ativa {
+            opacity: 1;
+        }
+    
+        /* Botões de navegação */
+        .botao-prev-2, .botao-next-2 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+    
+        .botao-prev-2:hover, .botao-next-2:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    
+        .botao-prev-2 {
+            left: 20px;
+        }
+    
+        .botao-next-2 {
+            right: 20px;
+        }
+    
+        /* CTA - Click na imagem */
+        .cta-clik-img {
+            position: absolute;
+            top: 90%; /* Posiciona o texto no rodapé do carrossel */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            z-index: 10;
+        }
+        .article-container {
+            margin-top: 18px;
+            
+            }
+            .icon-grid {
+                gap:  65px;
+            }
+    
+            .feature-article {
+                padding: 3px;
+                text-align: center;
+            }
+            .artigo-empreendedorismoDigital {
+                margin-bottom: 15px;
+             
+            }
+            .article-container ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+           
+    
+        /* Responsividade para telas pequenas */
+        @media (max-width: 768px) {
+            .botao-prev-2, .botao-next-2 {
+                padding: 10px;
+                font-size: 18px;
+            }
+            .carrossel-2 {
+                width: 100%;
+                height: 80vh; /* Altura reduzida para telas pequenas */
+            }
+            .cta-clik-img {
+                font-size: 18px; /* Reduz o tamanho da fonte */
+            }
+            #im1 {
+                 content: url('img/mobile/empreendedorismo/empreendedorismo-mobile/influenciadorMilionario.png  ');      
+            }
+            #im2 {
+                 content: url('img/mobile/empreendedorismo/empreendedorismo-mobile/formula-enriquecendo.png');      
+            }
+            #im3 {
+                 content: url('img/mobile/empreendedorismo/empreendedorismo-mobile/seja-seu-chefe.png   ');      
+            }
+            #im4 {
+                 content: url('img/mobile/empreendedorismo/empreendedorismo-mobile/gestor-6d.png');      
+            }
+            #im5 {
+                 content: url('img/mobile/empreendedorismo/empreendedorismo-mobile/drop-start-mobile.png');      
+            }
+        }
+      
+    </style>
+</head>
+
+<body>
+    <!-- Menu de navegação -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="img-logo">
+                <img src="icons8-livros-50.png" alt="Logo Aprenda e Evolua" class="logo-icon">
+            </div>
+            <p class="aprenda">Aprenda & Evolua</p>
+        </div>
+    
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <!-- Submenu Categorias -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Categorias</a>
+                <ul class="submenu">
+                    <li><a href="financasEinvestimento.html">Finanças e Investimentos</a></li>
+                    <li><a href="negociosEcarreiras.html">Negócios e Carreiras</a></li>
+                    <li><a href="desenvolvimentoPessoal.html">Desenvolvimento Pessoal</a></li>
+                    <li><a href="tecnologiaDaInformacao.html">Tecnologia da Informação</a></li>
+                    <li><a href="empreendedorismodigital.html">Empreendedorismo Digital</a></li>
+                </ul>
+            </li>
+            
+            <!-- Submenu Utilidades (com itens de Diversão incorporados) -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Utilidades</a>
+                <ul class="submenu">
+                    <li><a href="#">Relógio</a></li>
+                    <li><a href="#">Cronometro</a></li>
+                    <li><a href="#">Calculadora</a></li>
+                    <li><a href="#">Roleta</a></li>
+                    <li><a href="#">Paciência</a></li>
+                    <li><a href="#">Dados</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <main>
+        <!-- Banner com Título -->
+        <section class="hero-section">
+            <img src="img/empreendedorismo.png" alt="Imagem de Hero" />
+            <h1>Empreendedorismo Digital</h1>
+            <p>Descubra como construir um negócio lucrativo no mundo digital.</p>
+        </section>
+        <div class="artigo-empreendedorismoDigital">
+            <article class="article-container texto-parte2-artigo">
+                <h1>Empreendedorismo Digital: Como Construir um Negócio Online de Sucesso</h1>
+                <p>O empreendedorismo digital é uma das áreas que mais crescem no mundo atual. Com a internet, é possível criar negócios inovadores, alcançar um público global e trabalhar de qualquer lugar. Neste artigo, vamos explorar as vantagens de empreender no mundo digital e como você pode começar a construir o seu próprio negócio online.</p>
+        
+                <h2>💡 Por Que Investir em Empreendedorismo Digital?</h2>
+                <p>O mundo digital oferece oportunidades únicas para quem deseja empreender. Aqui estão algumas razões pelas quais o empreendedorismo digital é uma escolha inteligente:</p>
+                <ul>
+                    <li><strong>Baixo Custo de Inicialização:</strong> Diferente de negócios tradicionais, um negócio online pode ser iniciado com um investimento relativamente baixo.</li>
+                    <li><strong>Alcance Global:</strong> Com a internet, você pode alcançar clientes em qualquer parte do mundo.</li>
+                    <li><strong>Flexibilidade:</strong> Você pode trabalhar de qualquer lugar e definir seus próprios horários.</li>
+                    <li><strong>Escalabilidade:</strong> Um negócio digital pode crescer rapidamente sem a necessidade de grandes investimentos em infraestrutura.</li>
+                </ul>
+        
+                <h2>🚀 Passos para Começar no Empreendedorismo Digital</h2>
+                <p>Se você está pensando em começar um negócio online, aqui estão os passos essenciais para dar os primeiros passos:</p>
+                <ol>
+                    <li><strong>Escolha um Nicho:</strong> Defina um mercado específico que você deseja atender. Quanto mais específico for o seu nicho, mais fácil será se destacar.</li>
+                    <li><strong>Crie um Produto ou Serviço:</strong> Desenvolva um produto ou serviço que resolva um problema real para o seu público-alvo.</li>
+                    <li><strong>Construa uma Presença Online:</strong> Crie um site ou uma loja virtual para vender o seu produto ou serviço.</li>
+                    <li><strong>Gere Tráfego:</strong> Utilize estratégias de marketing digital, como SEO, redes sociais e anúncios pagos, para atrair visitantes ao seu site.</li>
+                    <li><strong>Monetize:</strong> Converta visitantes em clientes através de estratégias de vendas e marketing.</li>
+                </ol>
+        
+                <h2>📈 Ferramentas Essenciais para o Empreendedor Digital</h2>
+                <p>Para ter sucesso no empreendedorismo digital, é importante utilizar as ferramentas certas. Aqui estão algumas que você deve considerar:</p>
+                <div class="icon-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-tools fa-3x"></i>
+                        <h3>Ferramentas de Automação</h3>
+                        <p>Automatize tarefas repetitivas com ferramentas como Zapier, HubSpot e Mailchimp.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line fa-3x"></i>
+                        <h3>Análise de Dados</h3>
+                        <p>Utilize Google Analytics e outras ferramentas para monitorar o desempenho do seu negócio.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shopping-cart fa-3x"></i>
+                        <h3>Plataformas de E-commerce</h3>
+                        <p>Escolha plataformas como Shopify, WooCommerce ou Magento para criar sua loja virtual.</p>
+                    </div>
+                </div>
+        
+                <h2>🎯 Dicas para o Sucesso no Empreendedorismo Digital</h2>
+                <p>Para se destacar no mundo digital, é importante seguir algumas práticas recomendadas:</p>
+                <ul>
+                    <li><strong>Foque no Cliente:</strong> Entenda as necessidades do seu público e ofereça soluções que realmente agreguem valor.</li>
+                    <li><strong>Invista em Marketing Digital:</strong> Utilize estratégias como SEO, conteúdo marketing e mídias sociais para atrair e engajar clientes.</li>
+                    <li><strong>Mantenha-se Atualizado:</strong> O mundo digital está em constante evolução. Esteja sempre aprendendo e se adaptando às novas tendências.</li>
+                    <li><strong>Persista:</strong> O sucesso não acontece da noite para o dia. Seja persistente e continue ajustando suas estratégias.</li>
+                </ul>
+        
+                <div class="cta-container">
+                    <h2>Comece Sua Jornada no Empreendedorismo Digital Hoje! 🚀</h2>
+                    <p>Não perca a oportunidade de transformar sua vida com conhecimento prático e estratégias comprovadas. Clique no botão abaixo e garanta sua vaga no curso.</p>
+                    <a href="https://kiwify.app/gvk5O9R?afid=LglsuCxq" class="cta-button" target="_blank">Curso em alta!</a>
+                </div>
+            </article>
+        </div>
+
+        <!--Carrossel -2-->
+        <div class="carrossel-2">
+            <div class="imagens">
+                <a href="https://kiwify.app/gvk5O9R?afid=LglsuCxq" target="_blank">
+                    <img id="im1" class="img1 ativa" src="img/influence-milionario legacy.png" alt="Imagem 1">
+                </a>
+                <a href="https://kiwify.app/sKgGS9I?afid=KHZXyCL4" target="_blank">
+                    <img id="im2" class="img2" src="img/formula-enriquecedora.png" alt="Imagem 2">
+                </a>
+                <a href="https://kiwify.app/QdHUgoQ?afid=n3uCkgpN" target="_blank">
+                    <img id="im3" class="img3" src="img/SEJA SEU CHEFE.png" alt="Imagem 3">
+                </a>
+                <a href="https://kiwify.app/IIg6YFl?afid=QOmXlwyN" target="_blank">
+                    <img id="im4" class="img4" src="img/gestor 6d.png" alt="Imagem 4">
+                </a>
+                <a href="https://kiwify.app/4GRFavD?afid=0TBC9pO9" target="_blank">
+                    <img id="im5" class="img5" src="img/pc/empreendedorismoDigital/empreendedorimo-pc/drop-start-pc.png" alt="Imagem 5">
+                </a>
+            </div>
+            <button class="botao-prev-2">&#10094;</button> <!-- Ícone de anterior -->
+            <button class="botao-next-2">&#10095;</button> <!-- Ícone de próximo -->
+            <div class="indicadores"></div>
+        </div>
+
+        <!-- Seção de Cards -->
+        <article class="article-container">
+            <h2 class="section-title">🚀 Destaques</h2>
+            <div class="icon-grid">
+                <!-- Artigo 1 -->
+                <article class="feature-article">
+                    <h3>Influence Milionário Legacy</h3>
+                    <p>O Influence Milionário Legacy é um curso completo que ensina você a transformar seu canal do YouTube em uma máquina de monetização. Com técnicas avançadas de marketing digital, você aprenderá a atrair mais visualizações, engajamento e, consequentemente, aumentar sua receita.</p>
+                </article>
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <h3>Influence Milionário Legacy</h3>
+                    <p>Descubra como transformar seu canal do YouTube em uma MÁQUINA DE MONETIZAÇÃO</p>
+                    <a href="https://kiwify.app/gvk5O9R?afid=LglsuCxq" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 2 -->
+                <article class="feature-article">
+                    <h3>Fórmula enriquecedora On-line</h3>
+                    <p>A Fórmula enriquecedora On-line revela os segredos por trás das estratégias que geram riqueza na internet. Este curso oferece um passo a passo detalhado para você criar e escalar negócios online de sucesso, desde a concepção até a execução.</p>
+                </article>
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <h3>Fórmula enriquecedora On-line</h3>
+                    <p>Segredos por trás das fórmulas que geram riqueza</p>
+                    <a href="https://kiwify.app/sKgGS9I?afid=KHZXyCL4" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 3 -->
+                <article class="feature-article">
+                    <h3>Seja seu chefe</h3>
+                    <p>O curso Seja seu chefe aborda a mudança de mentalidade necessária para empreender com sucesso. Você aprenderá como sair da zona de conforto, assumir o controle da sua carreira e construir um negócio que te permita ser seu próprio chefe.</p>
+                </article>
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <h3>Seja seu chefe</h3>
+                    <p>Mudança de Mentalidade: Por que Ser Chefe de Si Mesmo é o Novo Sucesso</p>
+                    <a href="https://kiwify.app/QdHUgoQ?afid=n3uCkgpN" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 4 -->
+                <article class="feature-article">
+                    <h3>Gestor 6d - Tráfego Pago Upgrade</h3>
+                    <p>O Gestor 6d - Tráfego Pago Upgrade é um treinamento avançado para quem deseja dominar as técnicas de tráfego pago. Aprenda a criar campanhas altamente eficientes que convertem visitantes em clientes e aumentam o ROI do seu negócio.</p>
+                </article>
+                <!-- Card 4 -->
+                <div class="feature-card">
+                    <h3>Gestor 6d - Tráfego Pago Upgrade</h3>
+                    <p>Chegou a Hora do Upgrade: Transforme Seu Tráfego em Resultados Reais!</p>
+                    <a href="https://kiwify.app/IIg6YFl?afid=QOmXlwyN" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+                <!-- Artigo 5 -->
+                <article class="feature-article">
+                    <h3>Drop Start 2.0 </h3>
+                    <p>É um curso voltado para quem deseja iniciar um negócio online através do dropshipping, sem a necessidade de estoque, com baixo investimento e sem precisar aparecer. Nele, você aprende desde os conceitos básicos até as estratégias avançadas para escolher produtos, criar uma loja virtual eficiente e vender de forma automatizada.</p>
+                </article>
+                <!-- Card 5 -->
+                <div class="feature-card">
+                    <h3>Drop Start 2.0 </h3>
+                    <p>Chegou a Hora do Upgrade: Transforme Seu Tráfego em Resultados Reais!</p>
+                    <a href="https://kiwify.app/4GRFavD?afid=0TBC9pO9" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sobre o Projeto -->
+            <div class="footer-section">
+                <h3>Sobre o Projeto</h3>
+                <p>
+                    Nosso objetivo é capacitar pessoas a alcançarem sua liberdade financeira através do empreendedorismo digital, oferecendo cursos, ebooks e treinamentos de alta qualidade.
+                </p>
+            </div>
+
+            <!-- Links Rápidos -->
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>  
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contato@aprendaevolua.com</li>
+                    <li><i class="fas fa-phone"></i> (81) 99105-1562</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Timbaúba - PE, Brasil</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Direitos Autorais -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aprenda & Evolua. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    </script><script src="scriptMenu.js"></script>
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".imagens a"); // Selecionamos os links <a>
+    const imagens = document.querySelectorAll(".imagens img");
+    const prevBtn = document.querySelector(".botao-prev-2");
+    const nextBtn = document.querySelector(".botao-next-2");
+    const indicadorContainer = document.querySelector(".indicadores");
+    let indiceAtual = 0;
+    
+    function criarIndicadores() {
+        imagens.forEach((_, i) => {
+            const indicador = document.createElement("span");
+            indicador.classList.add("indicador");
+            if (i === 0) indicador.classList.add("ativo");
+            indicador.addEventListener("click", () => {
+                indiceAtual = i;
+                mostrarImagem(indiceAtual);
+            });
+            indicadorContainer.appendChild(indicador);
+        });
+    }
+
+    function atualizarIndicadores() {
+        document.querySelectorAll(".indicador").forEach((indicador, i) => {
+            indicador.classList.toggle("ativo", i === indiceAtual);
+        });
+    }
+    
+    function mostrarImagem(indice) {
+        // Primeiro desativa todos os links
+        links.forEach(link => {
+            link.style.pointerEvents = "none";
+        });
+        
+        // Depois controla as imagens
+        imagens.forEach((img, i) => {
+            img.classList.remove("ativa");
+            if (i === indice) {
+                img.classList.add("ativa");
+                // Ativa apenas o link da imagem visível
+                img.parentElement.style.pointerEvents = "auto";
+            }
+        });
+        atualizarIndicadores();
+    }
+    
+    prevBtn.addEventListener("click", function () {
+        indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+        mostrarImagem(indiceAtual);
+    });
+    
+    nextBtn.addEventListener("click", function () {
+        indiceAtual = (indiceAtual + 1) % imagens.length;
+        mostrarImagem(indiceAtual);
+    });
+    
+    function avancarAutomaticamente() {
+        indiceAtual = (indiceAtual + 1) % imagens.length;
+        mostrarImagem(indiceAtual);
+    }
+    
+    setInterval(avancarAutomaticamente, 5000); // Troca de imagem a cada 5 segundos
+    
+    // Inicialização correta
+    mostrarImagem(0);
+    criarIndicadores();
+});
+    </script>
+    
+</body>
+</html>

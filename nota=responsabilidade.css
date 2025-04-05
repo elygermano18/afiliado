@@ -1,0 +1,17 @@
+/* Estilo para a Nota de Responsabilidade */
+.nota-responsabilidade {
+    background: #fff3cd; /* Fundo amarelo claro */
+    border-left: 5px solid #ffc107; /* Borda amarela à esquerda */
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+}
+
+.nota-responsabilidade h2 {
+    color: #856404; /* Cor do título */
+}
+
+.nota-responsabilidade p {
+    color: #856404; /* Cor do texto */
+    line-height: 1.6;
+}

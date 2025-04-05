@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças e Investimentos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesArtigo.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Adicione o Font Awesome para ícones -->
+    <style>
+        /* Reset básico */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Carrossel em tela cheia */
+        .carrossel-2 {
+            position: relative;
+            width: 80%; /* Ocupa 100% da largura */
+            margin: 0 auto;
+            height: 70vh; /* Altura ajustável */
+            overflow: hidden;
+        }
+
+        /* Container das imagens */
+        .imagens {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            position: relative;
+        }
+
+        /* Estilo das imagens */
+        .imagens img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Garante que a imagem cubra toda a área sem distorcer */
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .imagens img.ativa {
+            opacity: 1;
+        }
+
+        /* Botões de navegação */
+        .botao-prev-2, .botao-next-2 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .botao-prev-2:hover, .botao-next-2:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .botao-prev-2 {
+            left: 20px;
+        }
+
+        .botao-next-2 {
+            right: 20px;
+        }
+
+        /* CTA - Click na imagem */
+        .cta-clik-img {
+            position: absolute;
+            top: 90%; /* Posiciona o texto no rodapé do carrossel */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .article-container {
+            margin-top: 18px;
+        }
+
+        .icon-grid {
+            gap: 65px;
+        }
+
+        .feature-article {
+            padding: 2px;
+            text-align: center;
+        }
+
+      
+
+      
+        /* Responsividade para telas pequenas */
+        @media (max-width: 768px) {
+            .botao-prev-2, .botao-next-2 {
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            .carrossel-2 {
+                width: 100%;
+                height: 80vh; /* Altura reduzida para telas pequenas */
+            }
+
+            .cta-clik-img {
+                font-size: 18px; /* Reduz o tamanho da fonte */
+            }
+
+            #im1 {
+                content: url('img/mobile/financas&investimento/financiamento-mobile/tiktok shop-mobile.png');
+            }
+
+            #im2 {
+                content: url('img/mobile/financas&investimento/financiamento-mobile/imperioDigital-mobile.png');
+            }
+
+            #im3 {
+                content: url('img/mobile/financas&investimento/financiamento-mobile/comunidade-rtm-mobile.png');
+            }
+
+            #im4 {
+                content: url('img/mobile/financas&investimento/financiamento-mobile/mometizar-facebook-tiktok.png');
+            }
+
+            #im5 {
+                content: url('img/mobile/financas&investimento/financiamento-mobile/imperio-das-comissoes-mobile.png');
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menu de navegação -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="img-logo">
+                <img src="icons8-livros-50.png" alt="Logo Aprenda e Evolua" class="logo-icon">
+            </div>
+            <p class="aprenda">Aprenda & Evolua</p>
+        </div>
+    
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <!-- Submenu Categorias -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Categorias</a>
+                <ul class="submenu">
+                    <li><a href="financasEinvestimento.html">Finanças e Investimentos</a></li>
+                    <li><a href="negociosEcarreiras.html">Negócios e Carreiras</a></li>
+                    <li><a href="desenvolvimentoPessoal.html">Desenvolvimento Pessoal</a></li>
+                    <li><a href="tecnologiaDaInformacao.html">Tecnologia da Informação</a></li>
+                    <li><a href="empreendedorismodigital.html">Empreendedorismo Digital</a></li>
+                </ul>
+            </li>
+            
+            <!-- Submenu Utilidades (com itens de Diversão incorporados) -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Utilidades</a>
+                <ul class="submenu">
+                    <li><a href="#">Relógio</a></li>
+                    <li><a href="#">Cronometro</a></li>
+                    <li><a href="#">Calculadora</a></li>
+                    <li><a href="#">Roleta</a></li>
+                    <li><a href="#">Paciência</a></li>
+                    <li><a href="#">Dados</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <main class="main-artigos">
+        <!-- Banner com Título -->
+        <section class="hero-section">
+            <img src="img/financas-fundo.png" alt="Imagem de Hero" />
+            <h1>Finanças e Investimentos</h1>
+            <p>Descubra como controlar suas finanças e investir de forma inteligente.</p>
+        </section>
+
+        <!-- Artigo sobre Finanças e Investimentos -->
+        <div class="artigo-financaseinvestimento box-artigo">
+                <article class="article-container">
+                    <h2>💡 Por Que Aprender Sobre Finanças e Investimentos?</h2>
+                    <p>Imagine ter total controle sobre seu dinheiro, saber exatamente para onde ele vai e, ainda por cima, vê-lo crescer ao longo do tempo. Parece um sonho distante? Não é! Aprender sobre <strong>finanças e investimentos</strong> é o primeiro passo para transformar esse sonho em realidade.</p>
+                    <p>No mundo atual, onde a economia está em constante mudança, saber gerenciar suas finanças e investir de forma inteligente não é apenas uma vantagem – é uma necessidade. Vamos explorar por que esse conhecimento é tão valioso e como ele pode mudar sua vida:</p>
+                
+                    <div class="icon-grid">
+                        <!-- Item 1: Organização Financeira -->
+                        <div class="feature-card">
+                            <i class="fas fa-wallet fa-3x"></i>
+                            <h3>Organização Financeira</h3>
+                            <p>Saber para onde vai cada centavo do seu dinheiro é o primeiro passo para alcançar a liberdade financeira. Aprenda a criar um orçamento, controlar gastos e evitar dívidas desnecessárias.</p>
+                        </div>
+                
+                        <!-- Item 2: Investimentos Inteligentes -->
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line fa-3x"></i>
+                            <h3>Investimentos Inteligentes</h3>
+                            <p>Investir não é só para os ricos! Com as estratégias certas, você pode começar com pouco e ver seu dinheiro crescer ao longo do tempo. Descubra como escolher os melhores investimentos para o seu perfil.</p>
+                        </div>
+                
+                        <!-- Item 3: Planejamento do Futuro -->
+                        <div class="feature-card">
+                            <i class="fas fa-piggy-bank fa-3x"></i>
+                            <h3>Planejamento do Futuro</h3>
+                            <p>Quer comprar uma casa, viajar pelo mundo ou se aposentar cedo? Tudo isso é possível com um bom planejamento financeiro. Aprenda a definir metas e criar um plano para alcançá-las.</p>
+                        </div>
+                    </div>
+                <div class="texto-parte2-artigo">
+                    <h3>📊 Dados que Mostram a Importância das Finanças Pessoais</h3>
+                    <p>Você sabia que:</p>
+                    <ul>
+                        <li><strong>67% dos brasileiros</strong> não têm controle sobre suas finanças pessoais? (Fonte: SPC Brasil)</li>
+                        <li><strong>80% das pessoas</strong> que começam a investir cedo alcançam a independência financeira antes dos 50 anos? (Fonte: Anbima)</li>
+                    </ul>
+                    <p>Esses números mostram que, infelizmente, a maioria das pessoas não está preparada para lidar com imprevistos financeiros ou planejar o futuro. Mas você pode ser a exceção!</p>
+                
+                    <h3>🚀 Como Começar?</h3>
+                    <p>Não importa se você está começando do zero ou já tem alguma experiência, aqui estão algumas dicas para dar os primeiros passos:</p>
+                    <ol>
+                        <li><strong>Defina seus objetivos:</strong> O que você quer alcançar? Comprar uma casa? Viajar? Se aposentar cedo? Ter metas claras é essencial.</li>
+                        <li><strong>Organize suas finanças:</strong> Use planilhas ou aplicativos para controlar seus gastos e receitas.</li>
+                        <li><strong>Invista em conhecimento:</strong> Cursos e livros sobre finanças e investimentos podem acelerar sua jornada.</li>
+                        <li><strong>Comece a investir:</strong> Mesmo que seja com pouco dinheiro, o importante é começar.</li>
+                    </ol>
+                </div>
+                
+                    <div class="cta-container">
+                        <h2>Transforme Sua Vida Financeira Hoje! 🚀</h2>
+                        <p>Não espere o momento perfeito para começar. O momento perfeito é agora! Clique no botão abaixo e descubra como nossos cursos podem te ajudar a alcançar seus objetivos financeiros.</p>
+                        <a href="https://kiwify.app/vqp2aGP?afid=DdzfXBSf" target="_blank" rel="noopener noreferrer" class="cta-button">Curso em alta!!</a>
+                    </div>
+                </article>
+           
+        </div>
+
+        <!--Carrossel -2-->
+        <div class="carrossel-2">
+            <div class="imagens">
+                <a href="https://kiwify.app/vqp2aGP?afid=DdzfXBSf" target="_blank">
+                    <img id="im1" class="img1 ativa" src="img/pc/financas&investimento/financiamento-pc/tiktok shop-pc.png" alt="Tok Gringo">
+                </a>
+                <a href="https://kiwify.app/EGDVad5?afid=Af5wRCNg" target="_blank">
+                    <img id="im2" class="img2" src="img/pc/financas&investimento/financiamento-pc/imperioDigital-pc.png" alt="Imperio Digital">
+                </a>
+                <a href="https://kiwify.app/q0crhsb?afid=jZxd9sjQ" target="_blank">
+                    <img id="im3" class="img3" src="img/pc/financas&investimento/financiamento-pc/comunidade-rtm-pc.png" alt="Comunidade RTM">
+                </a>
+                <a href="https://kiwify.app/FTMKtDg?afid=5vSIlsr8" target="_blank">
+                    <img id="im4" class="img4" src="img/pc/financas&investimento/financiamento-pc/monetizar-para-facebook-pc.png" alt="Monetizar Página do Facebook e TikTok">
+                </a>
+                <a href="https://kiwify.app/nEDBHhx?afid=EeFdPv2l" target="_blank">
+                    <img id="im5" class="img5" src="img/pc/financas&investimento/financiamento-pc/imperio-das-comissoes-pc.png" alt="Império das Comissões">
+                </a>
+            </div>
+            <button class="botao-prev-2">&#10094;</button> <!-- Ícone de anterior -->
+            <button class="botao-next-2">&#10095;</button> <!-- Ícone de próximo -->
+            <div class="indicadores"></div>
+        </div>
+
+        <!-- Seção de Cards -->
+        <article class="article-container">
+            <h2 class="section-title">🚀 Cursos em Destaque</h2>
+            <div class="icon-grid">
+                <!-- Artigo 1: Tok Gringo -->
+                <article class="feature-article">
+                    <h3>Tok Gringo</h3>
+                    <p>Aprenda a ganhar dinheiro criando conteúdo no TikTok para o mercado internacional. Este curso ensina estratégias avançadas para monetizar seu perfil e alcançar um público global.</p>
+                </article>
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <h3>Tok Gringo</h3>
+                    <p>Monetize seu TikTok e alcance o mercado internacional.</p>
+                    <a href="https://kiwify.app/vqp2aGP?afid=DdzfXBSf" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+                       <!-- Artigo 2: Império Digital -->
+                       <article class="feature-article">
+                        <h3>Império Digital</h3>
+                        <p>Domine as estratégias mais poderosas para construir um império digital lucrativo. Este curso revela os segredos dos maiores empreendedores online para criar múltiplas fontes de renda na internet.</p>
+                    </article>
+                    <!-- Card 2 -->
+                    <div class="feature-card">
+                        <h3>Império Digital</h3>
+                        <p>Construa seu império online com estratégias comprovadas</p>
+                        <a href="https://kiwify.app/EGDVad5?afid=Af5wRCNg" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                    </div>
+
+                <!-- Artigo 3: RTM -->
+                <article class="feature-article">
+                    <h3>Comunidade RTM</h3>
+                    <p>Junte-se à comunidade que está revolucionando o marketing digital. Aprenda estratégias avançadas de tráfego pago, conversão e escalabilidade com os melhores especialistas do mercado.</p>
+                </article>
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <h3>Comunidade RTM</h3>
+                    <p>Domine o marketing digital com a comunidade mais eficiente</p>
+                    <a href="https://kiwify.app/q0crhsb?afid=jZxd9sjQ" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 4: Monetizar Página do Facebook e TikTok -->
+                <article class="feature-article">
+                    <h3>Monetizar Página do Facebook e TikTok</h3>
+                    <p>Aprenda a monetizar suas páginas no Facebook e TikTok com estratégias comprovadas. Este curso é ideal para quem quer transformar seguidores em renda.</p>
+                </article>
+                <!-- Card 4 -->
+                <div class="feature-card">
+                    <h3>Monetizar Página do Facebook e TikTok</h3>
+                    <p>Transforme seguidores em renda com estratégias eficazes.</p>
+                    <a href="https://kiwify.app/FTMKtDg?afid=5vSIlsr8" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 5: Império das Comissões -->
+                <article class="feature-article">
+                    <h3>Império das Comissões</h3>
+                    <p>Descubra como ganhar dinheiro com programas de afiliados e comissões. Este curso ensina a construir um negócio lucrativo sem precisar criar produtos próprios.</p>
+                </article>
+                <!-- Card 5 -->
+                <div class="feature-card">
+                    <h3>Império das Comissões</h3>
+                    <p>Ganhe dinheiro com programas de afiliados e comissões.</p>
+                    <a href="https://kiwify.app/nEDBHhx?afid=EeFdPv2l" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sobre o Projeto -->
+            <div class="footer-section">
+                <h3>Sobre o Projeto</h3>
+                <p>
+                    Nosso objetivo é capacitar pessoas a alcançarem sua liberdade financeira através do empreendedorismo digital, oferecendo cursos, ebooks e treinamentos de alta qualidade.
+                </p>
+            </div>
+
+            <!-- Links Rápidos -->
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contato@aprendaevolua.com</li>
+                    <li><i class="fas fa-phone"></i> (81) 99105-1562</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Timbaúba - PE, Brasil</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Direitos Autorais -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aprenda & Evolua. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scriptMenu.js"></script>
+    <script src="script.js"></script>
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".imagens a"); // Selecionamos os links <a>
+    const imagens = document.querySelectorAll(".imagens img");
+    const prevBtn = document.querySelector(".botao-prev-2");
+    const nextBtn = document.querySelector(".botao-next-2");
+    const indicadorContainer = document.querySelector(".indicadores");
+    let indiceAtual = 0;
+    
+    function criarIndicadores() {
+        imagens.forEach((_, i) => {
+            const indicador = document.createElement("span");
+            indicador.classList.add("indicador");
+            if (i === 0) indicador.classList.add("ativo");
+            indicador.addEventListener("click", () => {
+                indiceAtual = i;
+                mostrarImagem(indiceAtual);
+            });
+            indicadorContainer.appendChild(indicador);
+        });
+    }
+
+    function atualizarIndicadores() {
+        document.querySelectorAll(".indicador").forEach((indicador, i) => {
+            indicador.classList.toggle("ativo", i === indiceAtual);
+        });
+    }
+    
+    function mostrarImagem(indice) {
+        // Primeiro desativa todos os links
+        links.forEach(link => {
+            link.style.pointerEvents = "none";
+        });
+        
+        // Depois controla as imagens
+        imagens.forEach((img, i) => {
+            img.classList.remove("ativa");
+            if (i === indice) {
+                img.classList.add("ativa");
+                // Ativa apenas o link da imagem visível
+                img.parentElement.style.pointerEvents = "auto";
+            }
+        });
+        atualizarIndicadores();
+    }
+    
+    prevBtn.addEventListener("click", function () {
+        indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+        mostrarImagem(indiceAtual);
+    });
+    
+    nextBtn.addEventListener("click", function () {
+        indiceAtual = (indiceAtual + 1) % imagens.length;
+        mostrarImagem(indiceAtual);
+    });
+    
+    function avancarAutomaticamente() {
+        indiceAtual = (indiceAtual + 1) % imagens.length;
+        mostrarImagem(indiceAtual);
+    }
+    
+    setInterval(avancarAutomaticamente, 5000); // Troca de imagem a cada 5 segundos
+    
+    // Inicialização correta
+    mostrarImagem(0);
+    criarIndicadores();
+});
+      </script>
+</body>
+</html>

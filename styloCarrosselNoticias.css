@@ -1,0 +1,160 @@
+     /* Estilos base */
+     .carrossel-noticias {
+        max-width: 100%;
+        margin: 40px auto;
+        padding: 20px;  
+        position: relative;
+        /* Impede que os botões vazem */
+    }
+    
+    .corrossel-titulo {
+        text-align: center;
+        color: #2A2F4F;
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+    
+    .conteiner-noticias {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 25px;
+        padding: 20px 0;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .conteiner-noticias::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .card-noticias {
+        flex: 0 0 300px;
+        scroll-snap-align: start;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        transition: all 0.3s ease;
+        position: relative;
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .news-date {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .news-title {
+        color: #2A2F4F;
+        font-size: 1.3rem;
+        margin-bottom: 0;
+        transition: all 0.3s ease;
+        line-height: 1.4;
+    }
+    
+    .mobile-cta {
+        display: none;
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 8px;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* Efeitos hover para desktop */
+    @media (min-width: 769px) {
+        .card-noticias:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background-color: #f9f9f9;
+        }
+        
+        .card-noticias:hover .news-title {
+            text-decoration: underline;
+            font-size: 1.35rem;
+            color: #1a1f3f;
+        }
+        
+        .conteiner-noticias:hover .auto-play-pause {
+            opacity: 1;
+        }
+    }
+    
+    /* Estilos para mobile */
+    @media (max-width: 768px) {
+        .card-noticias {
+            flex: 0 0 80%;
+            padding: 20px;
+            min-height: 120px;
+        }
+        
+        .mobile-cta {
+            display: block;
+        }
+        
+        .news-title {
+            font-size: 1.2rem;
+        }
+        .carrossel-noticias {
+            width: 100%;
+            margin: 20px auto;
+            padding: 15px;
+        }
+    }
+    
+    /* Navegação do carrossel */
+    .carrosselDeNoticias-nav {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .nav-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ddd;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .nav-dot.active {
+        background: var(--primary);
+    }
+    
+    /* Controles de autoplay */
+    .auto-play-controls {
+        text-align: center;
+        margin-top: 15px;
+    }
+    
+    .auto-play-pause {
+        background: #8e715e;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: opacity 0.3s;
+        opacity: 0.7;
+    }
+    
+    .auto-play-pause:hover {
+        opacity: 1;
+    }
+    .card-noticias a {
+        text-decoration: none;
+    }
+
+    /* Adicione isso no final do arquivo CSS */
+

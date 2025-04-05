@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento Pessoal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesArtigo.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset básico */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Carrossel em tela cheia */
+        .carrossel-2 {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .imagens {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            position: relative;
+        }
+
+        .imagens img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .imagens img.ativa {
+            opacity: 1;
+        }
+
+        .botao-prev-2, .botao-next-2 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .botao-prev-2:hover, .botao-next-2:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .botao-prev-2 {
+            left: 20px;
+        }
+
+        .botao-next-2 {
+            right: 20px;
+        }
+
+        .cta-clik-img {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .article-container {
+            margin-top: 18px;
+        }
+
+        .icon-grid {
+            gap: 65px;
+        }
+
+        .feature-article {
+            padding: 2px;
+            text-align: center;
+        }
+
+        .artigo-desenvolvimentopessoal {
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .botao-prev-2, .botao-next-2 {
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            .carrossel-2 {
+                width: 100%;
+                height: 80vh;
+            }
+
+            .cta-clik-img {
+                font-size: 18px;
+            }
+
+            #im1 {
+                content: url('img/mobile/Desenvolvimento-Pessoal/Do-caos-ao-foco-mobile.png');
+            }
+
+            #im2 {
+                content: url('img/mobile/Desenvolvimento-Pessoal/eletrica-predial-mobile.png');
+            }
+
+            #im3 {
+                content: url('img/mobile/Desenvolvimento-Pessoal/virada-milionaia-mobile.png');
+            }
+
+            #im4 {
+                content: url('img/mobile/Desenvolvimento-Pessoal/programa-adulto-consciente-mobile.png');
+            }
+
+            #im5 {
+                content: url('img/mobile/Desenvolvimento-Pessoal/introducao-a-filosofia-mobile.png');
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menu de navegação -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="img-logo">
+                <img src="icons8-livros-50.png" alt="Logo Aprenda e Evolua" class="logo-icon">
+            </div>
+            <p class="aprenda">Aprenda & Evolua</p>
+        </div>
+    
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <!-- Submenu Categorias -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Categorias</a>
+                <ul class="submenu">
+                    <li><a href="financasEinvestimento.html">Finanças e Investimentos</a></li>
+                    <li><a href="negociosEcarreiras.html">Negócios e Carreiras</a></li>
+                    <li><a href="desenvolvimentoPessoal.html">Desenvolvimento Pessoal</a></li>
+                    <li><a href="tecnologiaDaInformacao.html">Tecnologia da Informação</a></li>
+                    <li><a href="empreendedorismodigital.html">Empreendedorismo Digital</a></li>
+                </ul>
+            </li>
+            
+            <!-- Submenu Utilidades (com itens de Diversão incorporados) -->
+            <li class="has-submenu">
+                <a href="#" id="texto-submenu">Utilidades</a>
+                <ul class="submenu">
+                    <li><a href="#">Relógio</a></li>
+                    <li><a href="#">Cronometro</a></li>
+                    <li><a href="#">Calculadora</a></li>
+                    <li><a href="#">Roleta</a></li>
+                    <li><a href="#">Paciência</a></li>
+                    <li><a href="#">Dados</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <main>
+        <!-- Banner com Título -->
+        <section class="hero-section">
+            <img src="img/desenvolvimento=principal.jpeg" alt="Imagem de Hero" />
+            <h1>Desenvolvimento Pessoal</h1>
+            <p>Transforme sua mente, habilidades e atitudes para alcançar seu potencial máximo.</p>
+        </section>
+
+        <!-- Artigo sobre Desenvolvimento Pessoal -->
+        <div class="artigo-desenvolvimentopessoal box-artigo">
+            <article class="article-container">
+                <h2>💡 Por Que Investir em Desenvolvimento Pessoal?</h2>
+                <p>O desenvolvimento pessoal é a chave para desbloquear seu potencial em todas as áreas da vida. Mais do que uma tendência, é uma necessidade em um mundo que muda rapidamente e exige adaptação constante.</p>
+                <p>Investir em seu crescimento pessoal significa:</p>
+            
+                <div class="icon-grid">
+                    <!-- Item 1: Autoconhecimento -->
+                    <div class="feature-card">
+                        <i class="fas fa-brain fa-3x"></i>
+                        <h3>Autoconhecimento</h3>
+                        <p>Entender suas forças, fraquezas e motivações profundas para tomar decisões mais alinhadas com seu propósito.</p>
+                    </div>
+            
+                    <!-- Item 2: Habilidades Sociais -->
+                    <div class="feature-card">
+                        <i class="fas fa-users fa-3x"></i>
+                        <h3>Habilidades Sociais</h3>
+                        <p>Melhorar relacionamentos pessoais e profissionais através de comunicação eficaz e inteligência emocional.</p>
+                    </div>
+            
+                    <!-- Item 3: Produtividade -->
+                    <div class="feature-card">
+                        <i class="fas fa-tasks fa-3x"></i>
+                        <h3>Produtividade</h3>
+                        <p>Aprender técnicas comprovadas para gerenciar tempo, energia e prioridades de forma mais eficiente.</p>
+                    </div>
+                </div>
+
+                <div class="texto-parte2-artigo">
+                    <h3>📊 O Impacto do Desenvolvimento Pessoal</h3>
+                    <p>Dados que comprovam a importância:</p>
+                    <ul>
+                        <li><strong>85% do sucesso</strong> profissional está relacionado a habilidades interpessoais (Fonte: Harvard)</li>
+                        <li>Pessoas que investem em autodesenvolvimento têm <strong>3x mais chances</strong> de alcançar suas metas</li>
+                        <li><strong>78% dos profissionais</strong> bem-sucedidos creditam seu crescimento a programas de desenvolvimento pessoal</li>
+                    </ul>
+                
+                    <h3>🚀 Como Começar Sua Jornada?</h3>
+                    <p>Transforme sua vida com estas etapas simples:</p>
+                    <ol>
+                        <li><strong>Identifique áreas para melhorar:</strong> Carreira, relacionamentos, saúde, finanças ou espiritualidade.</li>
+                        <li><strong>Estabeleça metas claras:</strong> Defina objetivos SMART (Específicos, Mensuráveis, Atingíveis, Relevantes e Temporais).</li>
+                        <li><strong>Invista em conhecimento:</strong> Cursos, livros e mentores podem acelerar seu crescimento.</li>
+                        <li><strong>Pratique consistentemente:</strong> Aplicação diária é o que gera transformação real.</li>
+                    </ol>
+                </div>
+            
+                <div class="cta-container">
+                    <h2>Transforme Sua Vida Hoje Mesmo! 🚀</h2>
+                    <p>Comece sua jornada de autodesenvolvimento com nossos cursos especializados.</p>
+                    <a href="https://kiwify.app/ahvhZ7q?afid=dd80AeWn" target="_blank" class="cta-button">em alta!</a>
+                </div>
+            </article>
+        </div>
+
+        <!--Carrossel -->
+        <div class="carrossel-2">
+            <div class="imagens">
+                <a href="https://kiwify.app/ahvhZ7q?afid=dd80AeWn" target="_blank">
+                    <img id="im1" class="img1 ativa" src="img/pc/Desenvolvimento-Pessoal/Do-caos-ao-foco-pc.png" alt="Do Caos ao Foco 2.0">
+                </a>
+                <a href="https://kiwify.app/ufyFYod?afid=jtUak67h" target="_blank">
+                    <img id="im2" class="img2" src="img/pc/Desenvolvimento-Pessoal/eletrica-predial-pc.png" alt="Elétrica Predial e Residencial">
+                </a>
+                <a href="https://kiwify.app/QLP5OSo?afid=LTL5S6Ls" target="_blank">
+                    <img id="im3" class="img3" src="img/pc/Desenvolvimento-Pessoal/virada-milionaia-pc.png" alt="Virada Milionária">
+                </a>
+                <a href="https://kiwify.app/ZJeOF2l?afid=FGmeGk7H" target="_blank">
+                    <img id="im4" class="img4" src="img/pc/Desenvolvimento-Pessoal/programa-adulto-consciente-pc.png" alt="Programa Adulto Consciente">
+                </a>
+                <a href="https://kiwify.app/QXCYgX2?afid=7PcLtOwR" target="_blank">
+                    <img id="im5" class="img5" src="img/pc/Desenvolvimento-Pessoal/introducao-a-filosofia-pc.png" alt="Curso Introdução à Filosofia">
+                </a>
+            </div>
+            <button class="botao-prev-2">&#10094;</button>
+            <button class="botao-next-2">&#10095;</button>
+            <div class="indicadores"></div>
+        </div>
+
+        <!-- Seção de Cards -->
+        <article class="article-container" id="cursos">
+            <h2 class="section-title">🚀 Cursos em Destaque</h2>
+            <div class="icon-grid">
+                <!-- Artigo 1: Do Caos ao Foco 2.0 -->
+                <article class="feature-article">
+                    <h3>Do Caos ao Foco 2.0</h3>
+                    <p>MULHERES QUE TÊM FOCO PROCURAM BLINDAR-SE DE DISTRAÇÕES E DESENVOLVEM UM MINDSET VOLTADO À REALIZAÇÃO. QUANTO MAIOR O SEU NÍVEL DE ATENÇÃO, DE FOCO, MAIOR SEU BLOQUEIO MENTAL FRENTE A ELAS.</p>
+                </article>
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <h3>Do Caos ao Foco 2.0</h3>
+<p>Livre-se da ansiedade, supere a procrastinação e conquiste o foco!​​
+</p> 
+                    <a href="https://kiwify.app/ahvhZ7q?afid=dd80AeWn" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 2: Elétrica Predial e Residencial -->
+                <article class="feature-article">
+                    <h3>Elétrica Predial e Residencial</h3>
+                    <p>Indicado para quem quer começar do zero ou aperfeiçoar seus conhecimentos, ao fim do curso, você terá o tão sonhado CERTIFICADO para apresentar aos seus clientes, expor em seu escritório/oficina e incluir no seu currículo.</p>
+                </article>
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <h3>Elétrica Predial e Residencial</h3>
+                    <p>APRENDA UMA DAS PROFISSÕES MAIS BEM PAGAS DO MERCADO BRASILEIRO</p>
+                    <a href="https://kiwify.app/ufyFYod?afid=jtUak67h" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 3: Virada Milionária -->
+                <article class="feature-article">
+                    <h3>Virada Milionária</h3>
+                    <p>Mude sua mentalidade financeira e aprenda os princípios que levam à independência econômica. Estratégias práticas para construir riqueza de forma ética e sustentável.</p>
+                </article>
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <h3>Virada Milionária</h3>
+                    <p>Transforme sua relação com o dinheiro</p>
+                    <a href="https://kiwify.app/QLP5OSo?afid=LTL5S6Ls" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 4: Programa Adulto Consciente -->
+                <article class="feature-article">
+                    <h3>Programa Adulto Consciente</h3>
+                    <p>Enquanto outras soluções focam em dicas rápidas e superficiais, o Programa Adulto Consciente oferece um método profundamente estruturado, com aulas gravadas, exercícios práticos e encontros semanais ao vivo para garantir sua evolução constante.</p>
+                </article>
+                <!-- Card 4 -->
+                <div class="feature-card">
+                    <h3>Programa Adulto Consciente</h3>
+                    <p>Alcance sucesso nas 12 áreas da sua vida desenvolvendo a sua inteligência emocional!</p>
+                    <a href="https://kiwify.app/ZJeOF2l?afid=FGmeGk7H" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+
+                <!-- Artigo 5: Curso Introdução à Filosofia -->
+                <article class="feature-article">
+                    <h3>Curso Introdução à Filosofia</h3>
+                    <p>A Escola Santa Cruz apresenta o Curso de Introdução à Filosofia, um programa de formação que resgata a sabedoria dos grandes mestres católicos, como Santo Tomás de Aquino e Santo Agostinho. Nosso objetivo é oferecer uma formação sólida que integra razão e fé, ajudando os fiéis a compreenderem melhor os alicerces da verdade. O objetivo do curso é proporcionar aos alunos um conhecimento razoável da Filosofia, e de modo que este conhecimento esteja a serviço da Doutrina Católica.</p>
+                </article>
+                <!-- Card 5 -->
+                <div class="feature-card">
+                    <h3>Curso Introdução à Filosofia</h3>
+                    <p>Curso de INTRODUÇÃO À Filosofia a serviço da Doutrina Católica</p>
+                    <a href="https://kiwify.app/QXCYgX2?afid=7PcLtOwR" target="_blank" rel="noopener noreferrer" class="cta-button">Saiba Mais aqui!</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sobre o Projeto -->
+            <div class="footer-section">
+                <h3>Sobre o Projeto</h3>
+                <p>
+                    Nosso objetivo é capacitar pessoas a alcançarem seu potencial máximo através do desenvolvimento pessoal e profissional.
+                </p>
+            </div>
+
+            <!-- Links Rápidos -->
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contato@aprendaevolua.com</li>
+                    <li><i class="fas fa-phone"></i> (81) 99105-1562</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Timbaúba - PE, Brasil</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Direitos Autorais -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aprenda & Evolua. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scriptMenu.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".imagens a");
+            const imagens = document.querySelectorAll(".imagens img");
+            const prevBtn = document.querySelector(".botao-prev-2");
+            const nextBtn = document.querySelector(".botao-next-2");
+            const indicadorContainer = document.querySelector(".indicadores");
+            let indiceAtual = 0;
+            
+            function criarIndicadores() {
+                imagens.forEach((_, i) => {
+                    const indicador = document.createElement("span");
+                    indicador.classList.add("indicador");
+                    if (i === 0) indicador.classList.add("ativo");
+                    indicador.addEventListener("click", () => {
+                        indiceAtual = i;
+                        mostrarImagem(indiceAtual);
+                    });
+                    indicadorContainer.appendChild(indicador);
+                });
+            }
+
+            function atualizarIndicadores() {
+                document.querySelectorAll(".indicador").forEach((indicador, i) => {
+                    indicador.classList.toggle("ativo", i === indiceAtual);
+                });
+            }
+            
+            function mostrarImagem(indice) {
+                links.forEach(link => {
+                    link.style.pointerEvents = "none";
+                });
+                
+                imagens.forEach((img, i) => {
+                    img.classList.remove("ativa");
+                    if (i === indice) {
+                        img.classList.add("ativa");
+                        img.parentElement.style.pointerEvents = "auto";
+                    }
+                });
+                atualizarIndicadores();
+            }
+            
+            prevBtn.addEventListener("click", function () {
+                indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+                mostrarImagem(indiceAtual);
+            });
+            
+            nextBtn.addEventListener("click", function () {
+                indiceAtual = (indiceAtual + 1) % imagens.length;
+                mostrarImagem(indiceAtual);
+            });
+            
+            function avancarAutomaticamente() {
+                indiceAtual = (indiceAtual + 1) % imagens.length;
+                mostrarImagem(indiceAtual);
+            }
+            
+            setInterval(avancarAutomaticamente, 5000);
+            
+            mostrarImagem(0);
+            criarIndicadores();
+        });
+    </script>
+</body>
+</html>
